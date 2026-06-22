@@ -80,6 +80,7 @@ export interface CredentialKeymaker {
   mint(grant: CredentialGrant): ScopedCredential;
 }
 
+/** Injectable seams for a service keymaker (env / clock / key-id generator) — defaults are production. */
 export interface ServiceKeymakerOptions {
   /** Injectable env seam (hermetic tests). Defaults to the ambient env via auth. */
   env?: NodeJS.ProcessEnv;

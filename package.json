@@ -1,6 +1,6 @@
 {
   "name": "@bounded-systems/auth",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Service-credential resolver (GitHub, Notion) through a single sanctioned access point",
   "bounded": {
     "tagline": "Service-credential resolver (GitHub, Notion) through a single sanctioned access point",
@@ -54,6 +54,6 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
-    "@bounded-systems/env": "npm:@jsr/bounded-systems__env"
+    "@bounded-systems/env": "npm:@jsr/bounded-systems__env@^0.2.0"
   }
 }
