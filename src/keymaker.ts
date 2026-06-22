@@ -25,19 +25,25 @@ import { requireAuthToken, type AuthService } from "./index.ts";
 
 /** A request the credential injects authorization into. */
 export interface CredentialRequest {
+  /** The request URL, if any. */
   url?: string | undefined;
+  /** Existing request headers the credential adds to. */
   headers?: Record<string, string> | undefined;
 }
 
 /** A request after the credential has attached its authorization. */
 export interface AuthorizedCredentialRequest extends CredentialRequest {
+  /** Headers including the attached authorization. */
   headers: Record<string, string>;
 }
 
 /** Raised by {@link ScopedCredential.authorize} when the key has expired. */
 export class CredentialExpiredError extends Error {
+  /** The non-secret id of the expired credential. */
   readonly keyId: string;
+  /** When it expired, epoch ms. */
   readonly expiresAt: number;
+  /** Create the error for credential `keyId` that expired at `expiresAt` (epoch ms). */
   constructor(keyId: string, expiresAt: number) {
     super(`credential ${keyId} expired at ${new Date(expiresAt).toISOString()}`);
     this.name = "CredentialExpiredError";
@@ -52,6 +58,7 @@ export class CredentialExpiredError extends Error {
  * handle.
  */
 export interface ScopedCredential {
+  /** Non-secret provenance handle for this credential. */
   readonly keyId: string;
   /** Expiry, epoch ms. */
   readonly expiresAt: number;
@@ -61,12 +68,15 @@ export interface ScopedCredential {
 
 /** A request to mint a credential: how long it lives (+ an optional explicit id). */
 export interface CredentialGrant {
+  /** How long the minted credential lives, in ms. */
   ttlMs: number;
+  /** An explicit (non-secret) key id; otherwise generated. */
   keyId?: string | undefined;
 }
 
 /** The broker: mints least-authority, expiring credentials from a held root token. */
 export interface CredentialKeymaker {
+  /** Mint a new {@link ScopedCredential} for `grant`. */
   mint(grant: CredentialGrant): ScopedCredential;
 }
 

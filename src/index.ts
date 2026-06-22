@@ -10,6 +10,7 @@
  */
 import { processEnv } from "@bounded-systems/env";
 
+/** A service whose credential the broker resolves (GitHub, Notion, Slack). */
 export type AuthService = "github" | "notion" | "slack";
 
 // Per-service token env keys, in precedence order. GitHub follows the
