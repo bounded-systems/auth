@@ -4,7 +4,10 @@
   "description": "Service-credential resolver (GitHub, Notion) through a single sanctioned access point",
   "bounded": {
     "tagline": "Service-credential resolver (GitHub, Notion) through a single sanctioned access point",
-    "kind": "door"
+    "kind": "door",
+    "facet": "verb",
+    "role": "capability",
+    "domain": "auth"
   },
   "license": "MIT",
   "type": "module",
