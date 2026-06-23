@@ -5,6 +5,10 @@
   },
   "description": {
     "type": "meta",
-    "value": "Service-credential resolver (GitHub, Notion) through a single sanctioned access point"
+    "value": "A service-credential resolver — the single sanctioned access point for the tokens prx uses to reach GitHub and Notion.  Rather than read credentials from the environment at each call site, code asks this resolver for a named service's token.  Credential lookup lives in one pla…"
+  },
+  "keywords": {
+    "type": "body",
+    "value": "AUTH · CREDENTIALS · GITHUB · NOTION · CAPABILITY"
   }
 }
