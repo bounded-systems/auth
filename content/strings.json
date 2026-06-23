@@ -1,0 +1,10 @@
+{
+  "name": {
+    "type": "name",
+    "value": "auth"
+  },
+  "description": {
+    "type": "meta",
+    "value": "Service-credential resolver (GitHub, Notion) through a single sanctioned access point"
+  }
+}
